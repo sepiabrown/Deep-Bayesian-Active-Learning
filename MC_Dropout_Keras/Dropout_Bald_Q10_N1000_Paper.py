@@ -5,7 +5,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.python.keras.layers.core import Dense, Dropout, Activation, Flatten
 from tensorflow.python.keras.layers.convolutional import Convolution2D, MaxPooling2D
 from tensorflow.keras.optimizers import SGD, Adadelta, Adagrad, Adam
-from tensorflow.keras.utils import np_utils, generic_utils
+from tensorflow.python.keras.utils import np_utils, generic_utils
 from six.moves import range
 import numpy as np
 import scipy as sp

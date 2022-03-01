@@ -180,8 +180,8 @@ for e in range(Experiments):
 	model.add(Activation('softmax'))
 
 
-	model.compile(loss='categorical_crossentropy', optimizer='adam')
-	hist = model.fit(X_train, Y_train, batch_size=batch_size, epochs=epochs, metrics=['accuracy'], verbose=1, validation_data=(X_valid, Y_valid))
+	model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+	hist = model.fit(X_train, Y_train, batch_size=batch_size, epochs=epochs, verbose=1, validation_data=(X_valid, Y_valid))
 	Train_Result_Optimizer = hist.history
 	Train_Loss = np.asarray(Train_Result_Optimizer.get('loss'))
 	Train_Loss = np.array([Train_Loss]).T
@@ -200,7 +200,7 @@ for e in range(Experiments):
 
 
 	print('Evaluating Test Accuracy Without Acquisition')
-	score, acc = model.evaluate(X_test, Y_test, metrics=['accuracy'], verbose=0)
+	score, acc = model.evaluate(X_test, Y_test, verbose=0)
 
 	all_accuracy = acc
 
@@ -322,8 +322,8 @@ for e in range(Experiments):
 
 		
 
-		model.compile(loss='categorical_crossentropy', optimizer='adam')
-		hist = model.fit(X_train, Y_train, batch_size=batch_size, epochs=epochs, metrics=['accuracy'], verbose=1, validation_data=(X_valid, Y_valid))
+		model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+		hist = model.fit(X_train, Y_train, batch_size=batch_size, epochs=epochs, verbose=1, validation_data=(X_valid, Y_valid))
 		Train_Result_Optimizer = hist.history
 		Train_Loss = np.asarray(Train_Result_Optimizer.get('loss'))
 		Train_Loss = np.array([Train_Loss]).T
@@ -342,7 +342,7 @@ for e in range(Experiments):
 
 		print('Evaluate Model Test Accuracy with pooled points')
 
-		score, acc = model.evaluate(X_test, Y_test, metrics=['accuracy'], verbose=0)
+		score, acc = model.evaluate(X_test, Y_test, verbose=0)
 		print('Test score:', score)
 		print('Test accuracy:', acc)
 		all_accuracy = np.append(all_accuracy, acc)

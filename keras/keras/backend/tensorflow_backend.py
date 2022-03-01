@@ -2,6 +2,9 @@ import tensorflow as tf
 import numpy as np
 from .common import _FLOATX, _EPSILON
 
+import tensorflow.compat.v1 as tfv1
+tfv1.disable_v2_behavior()
+
 # INTERNAL UTILS
 
 _SESSION = None
@@ -31,7 +34,7 @@ def placeholder(shape=None, ndim=None, dtype=_FLOATX, name=None):
     if not shape:
         if ndim:
             shape = [None for _ in range(ndim)]
-    return tf.placeholder(dtype, shape=shape, name=name)
+    return tfv1.placeholder(dtype, shape=shape, name=name)
 
 
 def shape(x):

@@ -1,20 +1,20 @@
 from __future__ import print_function
-from keras.datasets import mnist
-from keras.preprocessing.image import ImageDataGenerator
-from keras.models import Sequential
-from keras.layers.core import Dense, Dropout, Activation, Flatten
-from keras.layers.convolutional import Convolution2D, MaxPooling2D
-from keras.optimizers import SGD, Adadelta, Adagrad, Adam
-from keras.utils import np_utils, generic_utils
+from tensorflow.keras.datasets import mnist
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers.core import Dense, Dropout, Activation, Flatten
+from tensorflow.keras.layers.convolutional import Convolution2D, MaxPooling2D
+from tensorflow.keras.optimizers import SGD, Adadelta, Adagrad, Adam
+from tensorflow.keras.utils import np_utils, generic_utils
 from six.moves import range
 import numpy as np
 import scipy as sp
-from keras import backend as K  
+from tensorflow.keras import backend as K  
 import random
 random.seed(5001)
 import scipy.io
 import matplotlib.pyplot as plt
-from keras.regularizers import l2, activity_l2
+from tensorflow.keras.regularizers import l2, activity_l2
 
 
 Experiments = 3

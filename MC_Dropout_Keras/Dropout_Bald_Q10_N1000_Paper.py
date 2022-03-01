@@ -34,7 +34,7 @@ nb_filters = 32
 # size of pooling area for max pooling
 nb_pool = 2
 # convolution kernel size
-nb_conv = 13
+nb_conv = 12
 
 score=0
 all_accuracy = 0

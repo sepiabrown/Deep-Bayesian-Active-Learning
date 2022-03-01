@@ -57,8 +57,8 @@ for e in range(Experiments):
 	# the data, shuffled and split between tran and test sets
 	(X_train_All, y_train_All), (X_test, y_test) = mnist.load_data()
 
-	X_train_All = X_train_All.reshape(X_train_All.shape[0], 1, img_rows, img_cols)
-	X_test = X_test.reshape(X_test.shape[0], 1, img_rows, img_cols)
+	X_train_All = X_train_All.reshape(X_train_All.shape[0], img_rows, img_cols,1)
+	X_test = X_test.reshape(X_test.shape[0], img_rows, img_cols,1)
 
 	random_split = np.asarray(random.sample(range(0,X_train_All.shape[0]), X_train_All.shape[0]))
 
@@ -165,7 +165,7 @@ for e in range(Experiments):
 
 
 	model = Sequential()
-	model.add(Convolution2D(nb_filters, nb_conv, nb_conv, padding='valid', input_shape=(1, img_rows, img_cols)))
+	model.add(Convolution2D(nb_filters, nb_conv, nb_conv, padding='valid', input_shape=(img_rows, img_cols,1)))
 	model.add(Activation('relu'))
 	model.add(Convolution2D(nb_filters, nb_conv, nb_conv))
 	model.add(Activation('relu'))
@@ -303,7 +303,7 @@ for e in range(Experiments):
 		Y_train = np_utils.to_categorical(y_train, nb_classes)
 
 		model = Sequential()
-		model.add(Convolution2D(nb_filters, nb_conv, nb_conv, padding='valid', input_shape=(1, img_rows, img_cols)))
+		model.add(Convolution2D(nb_filters, nb_conv, nb_conv, padding='valid', input_shape=(img_rows, img_cols,1)))
 		model.add(Activation('relu'))
 		model.add(Convolution2D(nb_filters, nb_conv, nb_conv))
 		model.add(Activation('relu'))

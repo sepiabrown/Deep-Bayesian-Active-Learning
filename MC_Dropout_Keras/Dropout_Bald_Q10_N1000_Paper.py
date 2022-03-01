@@ -231,7 +231,6 @@ for e in range(Experiments):
 
 			print ('Dropout Score', dropout_score)
 
-			print (X)
 
 			score_All = score_All + dropout_score
 

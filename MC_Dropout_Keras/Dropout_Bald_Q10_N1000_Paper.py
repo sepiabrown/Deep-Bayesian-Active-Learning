@@ -23,7 +23,7 @@ batch_size = 128
 nb_classes = 10
 
 #use a large number of epochs
-nb_epoch = 5
+epochs = 5
 
 # input image dimensions
 img_rows, img_cols = 28, 28
@@ -152,10 +152,10 @@ for e in range(Experiments):
 
 
 	#loss values in each experiment
-	Pool_Valid_Loss = np.zeros(shape=(nb_epoch, 1)) 	
-	Pool_Train_Loss = np.zeros(shape=(nb_epoch, 1)) 
-	Pool_Valid_Acc = np.zeros(shape=(nb_epoch, 1)) 	
-	Pool_Train_Acc = np.zeros(shape=(nb_epoch, 1)) 
+	Pool_Valid_Loss = np.zeros(shape=(epochs, 1)) 	
+	Pool_Train_Loss = np.zeros(shape=(epochs, 1)) 
+	Pool_Valid_Acc = np.zeros(shape=(epochs, 1)) 	
+	Pool_Train_Acc = np.zeros(shape=(epochs, 1)) 
 	x_pool_All = np.zeros(shape=(1))
 
 	Y_train = np_utils.to_categorical(y_train, nb_classes)
@@ -181,7 +181,7 @@ for e in range(Experiments):
 
 
 	model.compile(loss='categorical_crossentropy', optimizer='adam')
-	hist = model.fit(X_train, Y_train, batch_size=batch_size, nb_epoch=nb_epoch, show_accuracy=True, verbose=1, validation_data=(X_valid, Y_valid))
+	hist = model.fit(X_train, Y_train, batch_size=batch_size, epochs=epochs, show_accuracy=True, verbose=1, validation_data=(X_valid, Y_valid))
 	Train_Result_Optimizer = hist.history
 	Train_Loss = np.asarray(Train_Result_Optimizer.get('loss'))
 	Train_Loss = np.array([Train_Loss]).T
@@ -323,7 +323,7 @@ for e in range(Experiments):
 		
 
 		model.compile(loss='categorical_crossentropy', optimizer='adam')
-		hist = model.fit(X_train, Y_train, batch_size=batch_size, nb_epoch=nb_epoch, show_accuracy=True, verbose=1, validation_data=(X_valid, Y_valid))
+		hist = model.fit(X_train, Y_train, batch_size=batch_size, epochs=epochs, show_accuracy=True, verbose=1, validation_data=(X_valid, Y_valid))
 		Train_Result_Optimizer = hist.history
 		Train_Loss = np.asarray(Train_Result_Optimizer.get('loss'))
 		Train_Loss = np.array([Train_Loss]).T

@@ -173,7 +173,7 @@ for e in range(Experiments):
 	
 	Weight_Decay = 3.5 / float(X_train.shape[0])
 	model.add(Flatten())
-	model.add(Dense(256, W_regularizer=l2(Weight_Decay)))
+	model.add(Dense(256, kernel_regularizer=l2(Weight_Decay)))
 	model.add(Activation('relu'))
 	model.add(Dropout(0.5))
 	model.add(Dense(nb_classes))
@@ -314,7 +314,7 @@ for e in range(Experiments):
 		c = 3.5
 		Weight_Decay = c / float(X_train.shape[0])
 		model.add(Flatten())
-		model.add(Dense(256, W_regularizer=l2(Weight_Decay)))
+		model.add(Dense(256, kernel_regularizer=l2(Weight_Decay)))
 		model.add(Activation('relu'))
 		model.add(Dropout(0.5))
 		model.add(Dense(nb_classes))

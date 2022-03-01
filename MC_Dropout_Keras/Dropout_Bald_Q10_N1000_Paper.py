@@ -14,7 +14,7 @@ import random
 random.seed(5001)
 import scipy.io
 import matplotlib.pyplot as plt
-from tensorflow.keras.regularizers import l2, activity_l2
+from tensorflow.python.keras.regularizers import l2, activity_l2
 
 
 Experiments = 3

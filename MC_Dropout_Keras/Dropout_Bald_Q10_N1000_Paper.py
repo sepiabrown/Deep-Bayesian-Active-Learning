@@ -16,6 +16,7 @@ import scipy.io
 import matplotlib.pyplot as plt
 from tensorflow.python.keras.regularizers import l2
 
+print(K.image_data_format() == 'channels_first')
 
 Experiments = 3
 

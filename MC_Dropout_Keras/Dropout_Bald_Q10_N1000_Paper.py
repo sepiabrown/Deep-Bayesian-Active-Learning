@@ -164,7 +164,7 @@ for e in range(Experiments):
 
 
 	model = Sequential()
-	model.add(Convolution2D(nb_filters, nb_conv, nb_conv, border_mode='valid', input_shape=(1, img_rows, img_cols)))
+	model.add(Convolution2D(nb_filters, nb_conv, nb_conv, padding='valid', input_shape=(1, img_rows, img_cols)))
 	model.add(Activation('relu'))
 	model.add(Convolution2D(nb_filters, nb_conv, nb_conv))
 	model.add(Activation('relu'))
@@ -302,7 +302,7 @@ for e in range(Experiments):
 		Y_train = np_utils.to_categorical(y_train, nb_classes)
 
 		model = Sequential()
-		model.add(Convolution2D(nb_filters, nb_conv, nb_conv, border_mode='valid', input_shape=(1, img_rows, img_cols)))
+		model.add(Convolution2D(nb_filters, nb_conv, nb_conv, padding='valid', input_shape=(1, img_rows, img_cols)))
 		model.add(Activation('relu'))
 		model.add(Convolution2D(nb_filters, nb_conv, nb_conv))
 		model.add(Activation('relu'))

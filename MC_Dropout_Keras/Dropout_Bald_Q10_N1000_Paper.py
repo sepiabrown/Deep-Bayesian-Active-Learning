@@ -2,7 +2,7 @@ from __future__ import print_function
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers.core import Dense, Dropout, Activation, Flatten
+from tensorflow.python.keras.layers.core import Dense, Dropout, Activation, Flatten
 from tensorflow.keras.layers.convolutional import Convolution2D, MaxPooling2D
 from tensorflow.keras.optimizers import gradient_descent_v2, adam_v2#SGD, Adadelta, Adagrad, Adam
 from tensorflow.keras.utils import np_utils, generic_utils

@@ -32,9 +32,9 @@ img_rows, img_cols = 28, 28
 nb_filters = 32
 
 # size of pooling area for max pooling
-nb_pool = 5
+nb_pool = 2
 # convolution kernel size
-nb_conv = 3
+nb_conv = 4
 
 score=0
 all_accuracy = 0

@@ -13,7 +13,7 @@ _SESSION = None
 def _get_session():
     global _SESSION
     if _SESSION is None:
-        _SESSION = tf.Session('')
+        _SESSION = tfv1.Session('')
     return _SESSION
 
 
